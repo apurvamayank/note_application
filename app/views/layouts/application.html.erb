@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NoteApplication</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="text-center">
+    <% if signed_in? %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="col px-md-2">
+          <%= button_to 'Note List', notes_path, method: :get, class: 'btn btn-success navbar-brand' %>
+        </div>
+        <div class="col px-md-2">
+          <%= button_to 'New note', new_note_path, method: :get, class: 'btn btn-success navbar-brand' %>
+        </div>
+        <div class="col px-md-2">
+          <%= button_to 'Sign out', sign_out_path, method: :delete, class: 'btn btn-danger mr-sm-2' %>
+          
+        </div>
+      </nav>
+    <% end %>
+
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %> alert-danger"><%= value %></div>
+      <% end %>
+    </div>
+    
+    <%= yield %>
+  </body>
+</html>

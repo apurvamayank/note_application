@@ -1,0 +1,10 @@
+/log
+/tmp
+/config/database.yml
+/storage/*
+!/storage/.keep
+
+/public/assets
+/public/packs-test
+/node_modules
+/yarn-error.log

@@ -1,0 +1,16 @@
+one:
+  id: 1
+  first_name: John
+  last_name: Smith
+  email: john.smith@yopmail.com
+  encrypted_password: $2a$12$Tv8RPI0xkXKsjMPBsivf1ENCRYPTEDPASSWORDPWt7ZJUr351i57glgUiD2RkJ4upl49m
+  remember_token: 7cec45c9f95f880823bcb58aaee64ade07ed2066
+# column: value
+#
+two:
+  id: 2
+  first_name: Jane
+  last_name: Smith
+  email: jane.smith@yopmail.com
+  encrypted_password: $2a$12$Tv8RPI0xkXKsjMPBsivf1ENCRYPTEDPASSWORDPWt7ZJUr351i57glgUiD2RkJ4upl49m
+  remember_token: 7cec45c9f95f880823bcb58aaee64ade07ed2066

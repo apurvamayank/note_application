@@ -1,0 +1,30 @@
+<h1><%= current_user.full_name %>'s Listing Notes</h1>
+<% if @notes.present? %>
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Time</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @notes.each_with_index do |note, index|%>
+          <tr>
+            <th scope="row"><%= index + 1%></th>
+            <td><%= note.title %></td>
+            <td><%= note.created_at.strftime("%a, %H:%M") %></td>
+
+            <td><%= link_to 'Show', note_path(note) %>
+            <%= link_to 'Edit', edit_note_path(note) %>
+            <%= link_to 'Delete', note_path(note), method: :delete, data: {confirm:"Are you sure?"} %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% else %>
+  <p>
+    "No note present"
+  </p>
+<% end %>
