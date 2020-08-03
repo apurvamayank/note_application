@@ -9,7 +9,9 @@ class NotesController < ApplicationController
     @note = current_user.notes.new
   end
 
-  def edit; end
+  def edit
+    redirect_to notes_path, notice: 'Not permitted' if @note.nil?
+  end
 
   def create
     @note = current_user.notes.new(note_params)
@@ -22,7 +24,6 @@ class NotesController < ApplicationController
   end
 
   def update
-    redirect_to notes_path, notice: 'Not permitted' if @note.nil?
     if @note.update(note_params)
       redirect_to notes_path, notice: 'Note update'
     else
