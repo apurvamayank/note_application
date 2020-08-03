@@ -22,6 +22,7 @@ class NotesController < ApplicationController
   end
 
   def update
+    redirect_to notes_path, notice: 'Not permitted' if @note.nil?
     if @note.update(note_params)
       redirect_to notes_path, notice: 'Note update'
     else
