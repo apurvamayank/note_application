@@ -42,7 +42,7 @@ class NotesController < ApplicationController
   private
 
   def find_note
-    @note = Note.find_by(id: params[:id])
+    @note = current_user.notes.find_by(id: params[:id])
   end
 
   def note_params
