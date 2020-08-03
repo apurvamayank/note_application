@@ -9,3 +9,4 @@
 /node_modules
 /yarn-error.log
 /config/master.key
+/config/credentials/development.key
