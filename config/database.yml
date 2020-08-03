@@ -3,9 +3,8 @@ default: &default
   timeout: 5000
   encoding: utf8
   reconnect: false
-  username: root
-  password: princeofpune7.
-  socket: /tmp/mysql.sock
+  username: <username>
+  password: <password>
 
 development:
   <<: *default
