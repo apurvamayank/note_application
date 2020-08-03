@@ -1,6 +1,5 @@
 /log
 /tmp
-/config/database.yml
 /storage/*
 !/storage/.keep
 
@@ -8,3 +7,5 @@
 /public/packs-test
 /node_modules
 /yarn-error.log
+/config/master.key
+/config/credentials/development.key
