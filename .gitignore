@@ -1,6 +1,5 @@
 /log
 /tmp
-/config/database.yml
 /storage/*
 !/storage/.keep
 
