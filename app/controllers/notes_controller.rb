@@ -9,7 +9,9 @@ class NotesController < ApplicationController
     @note = current_user.notes.new
   end
 
-  def edit; end
+  def edit
+    redirect_to notes_path, notice: 'Not permitted' if @note.nil?
+  end
 
   def create
     @note = current_user.notes.new(note_params)
@@ -42,7 +44,7 @@ class NotesController < ApplicationController
   private
 
   def find_note
-    @note = Note.find_by(id: params[:id])
+    @note = current_user.notes.find_by(id: params[:id])
   end
 
   def note_params
